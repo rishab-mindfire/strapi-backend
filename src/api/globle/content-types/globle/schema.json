@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "globles",
+  "info": {
+    "singularName": "globle",
+    "pluralName": "globles",
+    "displayName": "Global"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titel": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "header": {
+      "type": "component",
+      "component": "layout.header",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "component": "layout.footer",
+      "repeatable": false
+    }
+  }
+}
