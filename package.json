@@ -12,7 +12,17 @@
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npx eslint --fix",
+      "npx prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "npx prettier --write"
+    ]
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.46.1",
@@ -28,7 +38,9 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "typescript": "^5"
+    "prettier": "^3.8.3",
+    "typescript": "^5",
+    "vite": "^5.4.21"
   },
   "engines": {
     "node": ">=20.0.0 <=24.x.x",
