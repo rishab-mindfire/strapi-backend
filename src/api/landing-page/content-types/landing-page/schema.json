@@ -23,7 +23,9 @@
         "blocks.hero",
         "blocks.section-heading",
         "blocks.card-grid",
-        "blocks.component-content-with-image"
+        "blocks.component-content-with-image",
+        "blocks.markdown",
+        "blocks.person-card"
       ]
     }
   }
