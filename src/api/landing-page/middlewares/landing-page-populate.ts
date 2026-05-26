@@ -26,20 +26,23 @@ const populate = {
 
       'blocks.component-content-with-image': {
         populate: {
+          link: true,
           image: {
             fields: ['alternativeText', 'url'],
           },
         },
       },
+
+      'blocks.markdown': true,
+
+      'blocks.person-card': true,
     },
   },
 };
 
 export default (config, { strapi }: { strapi: Core.Strapi }) => {
   return async (ctx, next) => {
-    // Stringify the object directly
     ctx.query.populate = populate;
-
     strapi.log.info('In landing-page-populate middleware.');
     await next();
   };

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_blocks_person_cards",
+  "info": {
+    "displayName": "Person Card"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "aboutPerson": {
+      "type": "text"
+    },
+    "personName": {
+      "type": "string"
+    },
+    "personJob": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
