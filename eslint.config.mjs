@@ -1,19 +1,37 @@
 import js from '@eslint/js';
-import prettierConfig from 'eslint-config-prettier';
+import tseslint from 'typescript-eslint';
+import nextPlugin from '@next/eslint-plugin-next';
 
-export default [
+export default tseslint.config(
+  // Core JS Recommended rules
   js.configs.recommended,
-  prettierConfig,
+
+  // Automated TypeScript Configurations
+  ...tseslint.configs.recommended,
+
+  // Custom Next.js Integration
   {
-    rules: {
-      'no-unused-vars': 'warn',
-      'no-undef': 'error',
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      '@next/next': nextPlugin,
     },
-    languageOptions: {
-      globals: {
-        node: true,
-        strapi: true,
-      },
+    rules: {
+      ...nextPlugin.configs.recommended.rules,
+      ...nextPlugin.configs['core-web-vitals'].rules,
+      'react/react-in-jsx-scope': 'off',
+      // 'no-console': ['error', { allow: ['warn', 'error'] }],
     },
   },
-];
+
+  // Global Ignores (This stops ESLint from reading auto-generated code)
+  {
+    ignores: [
+      '.next/',
+      'node_modules/',
+      'dist/',
+      'lib/generated/',
+      'commitlint.config.js',
+      'commitlint.config.cjs',
+    ],
+  },
+);
