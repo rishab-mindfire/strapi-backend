@@ -32,6 +32,9 @@ export default tseslint.config(
       'lib/generated/',
       'commitlint.config.js',
       'commitlint.config.cjs',
+      'src/api',
+      'config',
+      'types'
     ],
   },
 );

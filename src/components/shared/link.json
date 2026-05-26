@@ -21,10 +21,7 @@
     },
     "type": {
       "type": "enumeration",
-      "enum": [
-        "PRIMARY",
-        "SECONDARY"
-      ]
+      "enum": ["PRIMARY", "SECONDARY"]
     }
   },
   "config": {}
