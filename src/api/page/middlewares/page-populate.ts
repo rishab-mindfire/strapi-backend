@@ -1,5 +1,5 @@
 /**
- * `landing-page-populate` middleware
+ * `page-populate` middleware
  */
 import type { Core } from '@strapi/strapi';
 
@@ -55,7 +55,7 @@ const populate = {
 export default (config, { strapi }: { strapi: Core.Strapi }) => {
   return async (ctx, next) => {
     ctx.query.populate = populate;
-    strapi.log.info('In landing-page-populate middleware.');
+    strapi.log.info('In page-populate middleware.');
     await next();
   };
 };
