@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Titel": {
+    "Title": {
       "type": "string"
     },
     "Description": {
