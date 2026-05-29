@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Titel": {
+    "Title": {
       "type": "string"
     },
     "Description": {
@@ -25,6 +25,11 @@
     "footer": {
       "type": "component",
       "component": "layout.footer",
+      "repeatable": false
+    },
+    "login": {
+      "type": "component",
+      "component": "layout.sign-in",
       "repeatable": false
     }
   }

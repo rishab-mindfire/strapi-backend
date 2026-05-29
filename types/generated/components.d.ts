@@ -120,6 +120,22 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutSignIn extends Struct.ComponentSchema {
+  collectionName: 'components_layout_sign_ins';
+  info: {
+    displayName: 'signIn';
+  };
+  attributes: {
+    createAccount: Schema.Attribute.Component<'shared.link', false>;
+    EmailLabel: Schema.Attribute.String;
+    logoImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mainText: Schema.Attribute.String;
+    namelabel: Schema.Attribute.String;
+    passwordlabel: Schema.Attribute.String;
+    secondaryText: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_cards';
   info: {
@@ -171,6 +187,7 @@ declare module '@strapi/strapi' {
       'blocks.section-heading': BlocksSectionHeading;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
+      'layout.sign-in': LayoutSignIn;
       'shared.card': SharedCard;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;

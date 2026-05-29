@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_layout_sign_ins",
+  "info": {
+    "displayName": "signIn"
+  },
+  "options": {},
+  "attributes": {
+    "logoImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files", "videos", "audios"]
+    },
+    "mainText": {
+      "type": "string"
+    },
+    "secondaryText": {
+      "type": "string"
+    },
+    "EmailLabel": {
+      "type": "string"
+    },
+    "passwordlabel": {
+      "type": "string"
+    },
+    "namelabel": {
+      "type": "string"
+    },
+    "createAccount": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

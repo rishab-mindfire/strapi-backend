@@ -38,6 +38,13 @@ const populate = {
       },
     },
   },
+  login: {
+    populate: {
+      logoImage: {
+        fields: ['url'],
+      },
+    },
+  },
 };
 
 export default (config, { strapi }: { strapi: Core.Strapi }) => {
