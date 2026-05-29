@@ -26,6 +26,11 @@
       "type": "component",
       "component": "layout.footer",
       "repeatable": false
+    },
+    "login": {
+      "type": "component",
+      "component": "layout.sign-in",
+      "repeatable": false
     }
   }
 }

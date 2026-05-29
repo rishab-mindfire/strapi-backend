@@ -531,6 +531,7 @@ export interface ApiGlobleGloble extends Struct.SingleTypeSchema {
       'api::globle.globle'
     > &
       Schema.Attribute.Private;
+    login: Schema.Attribute.Component<'layout.sign-in', false>;
     publishedAt: Schema.Attribute.DateTime;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
