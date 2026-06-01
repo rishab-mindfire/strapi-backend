@@ -6,7 +6,14 @@ import type { Core } from '@strapi/strapi';
 
 const populate = {
   featuredImage: {
-    fields: ['alternativeText', 'url'],
+    fields: ['url', 'alternativeText'],
+  },
+  author: {
+    populate: {
+      image: {
+        fields: ['url', 'alternativeText'],
+      },
+    },
   },
 };
 

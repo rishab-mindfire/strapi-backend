@@ -48,6 +48,10 @@ const populate = {
       },
 
       'blocks.newsletter': true,
+
+      'blocks.featured-article': {
+        populate: '*',
+      },
     },
   },
 };
