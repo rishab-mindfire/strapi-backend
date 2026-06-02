@@ -9,5 +9,8 @@ export default factories.createCoreRouter('api::article.article', {
     find: {
       middlewares: ['api::article.article-populate'],
     },
+    findOne: {
+      middlewares: ['api::article.article-populate'],
+    },
   },
 });
