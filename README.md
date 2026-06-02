@@ -29,8 +29,15 @@ Inside the project directory, you can run the following commands:
 develop
 Starts the Strapi application with autoReload enabled. This is the recommended mode for local development (changing content types, adding plugins, etc.).
 
+```bash
 npm run dev
-
 # or
-
 yarn dev
+```
+
+### API for CMS
+
+- GET /api/globle - For header footer compnent
+- GET /api/landing-page - For componets of landing page (blocks )
+- GET /api/articles - For Articles and blog posts
+- GET /api/pricings - Pricing components
