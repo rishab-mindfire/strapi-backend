@@ -4,15 +4,15 @@ Welcome to the backend repository for our Strapi application. This project serve
 
 ---
 
-## Getting Started
+## 1. Getting Started
 
 Strapi comes with a full-featured Command Line Interface (CLI) which lets you scaffold and manage your project in seconds.
 
-### Prerequisites
+### 2. Prerequisites
 
 Ensure you have [Node.js](https://nodejs.org/) and npm (or yarn) installed on your machine.
 
-### Installation
+### 3. Installation
 
 Clone the repository and install the dependencies:
 
@@ -62,4 +62,27 @@ DATABASE_SCHEMA=public
 DATABASE_SSL=true
 DATABASE_POOL_MIN=2
 DATABASE_POOL_MAX=10
+```
+
+## 4. User flow
+
+```mermaid
+flowchart TD
+
+%% 1. PUBLIC LANDING PAGE
+    A[User Visits App] --> LP[Landing Page: /]
+    LP --> Explore[Explore Public CMS Content]
+
+%% 2. AUTHENTICATION STREAM
+    Explore --> |Clicks Login| Auth{Authenticated?}
+    Auth -- No --> Login[Login Page / Better-Auth]
+    Login --> |Success| SetAuth[Set Auth State]
+
+%% 3. STRAIGHT-FORWARD ROUTING
+    Auth -- Yes --> UnlockedRoutes{Choose Route}
+    SetAuth --> UnlockedRoutes
+
+    UnlockedRoutes --> |View Metrics| Dash["Dashboard (/dashboard)"]
+    UnlockedRoutes --> |Read Articles| Blog["Blog Section (/blog)"]
+    UnlockedRoutes --> |Check Tiers| Pricing["Pricing Details (/pricing)"]
 ```
