@@ -17,7 +17,7 @@ Ensure you have [Node.js](https://nodejs.org/) and npm (or yarn) installed on yo
 Clone the repository and install the dependencies:
 
 ```bash
-cd your-repository-name
+cd strapi-backend
 npm install
 # or
 yarn install
@@ -41,3 +41,25 @@ yarn dev
 - GET /api/landing-page - For componets of landing page (blocks )
 - GET /api/articles - For Articles and blog posts
 - GET /api/pricings - Pricing components
+
+### backend env.example
+
+```
+# Server
+HOST=0.0.0.0
+PORT=1337
+
+# Secrets for stapi if there
+
+# Database
+JWT_SECRET=**********
+DATABASE_HOST=ep-calm-glitter-aowbjyfg-pooler.c-2.ap-southeast-1.aws.neon.tech
+DATABASE_PORT=5432
+DATABASE_NAME=neondb
+DATABASE_USERNAME=neondb_owner
+DATABASE_PASSWORD=***********
+DATABASE_SCHEMA=public
+DATABASE_SSL=true
+DATABASE_POOL_MIN=2
+DATABASE_POOL_MAX=10
+```
