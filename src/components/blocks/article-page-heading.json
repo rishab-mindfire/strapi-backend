@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_article_page_headings",
+  "info": {
+    "displayName": "Article Page heading"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string"
+    },
+    "subHeading": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

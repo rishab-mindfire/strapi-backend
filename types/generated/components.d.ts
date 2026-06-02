@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksArticlePageHeading extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_article_page_headings';
+  info: {
+    displayName: 'Article Page heading';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.Text;
+  };
+}
+
 export interface BlocksCardGrid extends Struct.ComponentSchema {
   collectionName: 'components_blocks_card_grids';
   info: {
@@ -184,9 +195,24 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPricing extends Struct.ComponentSchema {
+  collectionName: 'components_shared_pricings';
+  info: {
+    displayName: 'Pricing';
+  };
+  attributes: {
+    pricingBenefits: Schema.Attribute.RichText;
+    pricingButton: Schema.Attribute.Component<'shared.link', true>;
+    pricingHeader: Schema.Attribute.String;
+    pricingLable: Schema.Attribute.String;
+    PricingRate: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.article-page-heading': BlocksArticlePageHeading;
       'blocks.card-grid': BlocksCardGrid;
       'blocks.component-content-with-image': BlocksComponentContentWithImage;
       'blocks.faqs': BlocksFaqs;
@@ -202,6 +228,7 @@ declare module '@strapi/strapi' {
       'shared.card': SharedCard;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
+      'shared.pricing': SharedPricing;
     }
   }
 }

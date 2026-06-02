@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_shared_pricings",
+  "info": {
+    "displayName": "Pricing"
+  },
+  "options": {},
+  "attributes": {
+    "pricingHeader": {
+      "type": "string"
+    },
+    "pricingLable": {
+      "type": "string"
+    },
+    "PricingRate": {
+      "type": "string"
+    },
+    "pricingButton": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "pricingBenefits": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}
