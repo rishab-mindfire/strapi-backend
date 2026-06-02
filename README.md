@@ -4,7 +4,7 @@ Welcome to the backend repository for our Strapi application. This project serve
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Strapi comes with a full-featured Command Line Interface (CLI) which lets you scaffold and manage your project in seconds.
 
@@ -22,3 +22,15 @@ npm install
 # or
 yarn install
 ```
+
+🛠️ Available Scripts
+Inside the project directory, you can run the following commands:
+
+develop
+Starts the Strapi application with autoReload enabled. This is the recommended mode for local development (changing content types, adding plugins, etc.).
+
+npm run dev
+
+# or
+
+yarn dev

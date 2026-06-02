@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksArticlePageHeading extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_article_page_headings';
+  info: {
+    displayName: 'Article Page heading';
+  };
+  attributes: {
+    Heading: Schema.Attribute.String;
+    subHeading: Schema.Attribute.Text;
+  };
+}
+
 export interface BlocksCardGrid extends Struct.ComponentSchema {
   collectionName: 'components_blocks_card_grids';
   info: {
@@ -32,6 +43,16 @@ export interface BlocksFaqs extends Struct.ComponentSchema {
   };
   attributes: {
     Faq: Schema.Attribute.Component<'shared.card', true>;
+  };
+}
+
+export interface BlocksFeaturedArticle extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_featured_articles';
+  info: {
+    displayName: 'Featured Article';
+  };
+  attributes: {
+    articles: Schema.Attribute.Relation<'oneToMany', 'api::article.article'>;
   };
 }
 
@@ -120,6 +141,22 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutSignIn extends Struct.ComponentSchema {
+  collectionName: 'components_layout_sign_ins';
+  info: {
+    displayName: 'signIn';
+  };
+  attributes: {
+    createAccount: Schema.Attribute.Component<'shared.link', false>;
+    EmailLabel: Schema.Attribute.String;
+    logoImage: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    mainText: Schema.Attribute.String;
+    namelabel: Schema.Attribute.String;
+    passwordlabel: Schema.Attribute.String;
+    secondaryText: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCard extends Struct.ComponentSchema {
   collectionName: 'components_shared_cards';
   info: {
@@ -158,12 +195,28 @@ export interface SharedLogoLink extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPricing extends Struct.ComponentSchema {
+  collectionName: 'components_shared_pricings';
+  info: {
+    displayName: 'Pricing';
+  };
+  attributes: {
+    pricingBenefits: Schema.Attribute.RichText;
+    pricingButton: Schema.Attribute.Component<'shared.link', true>;
+    pricingHeader: Schema.Attribute.String;
+    pricingLable: Schema.Attribute.String;
+    PricingRate: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.article-page-heading': BlocksArticlePageHeading;
       'blocks.card-grid': BlocksCardGrid;
       'blocks.component-content-with-image': BlocksComponentContentWithImage;
       'blocks.faqs': BlocksFaqs;
+      'blocks.featured-article': BlocksFeaturedArticle;
       'blocks.hero': BlocksHero;
       'blocks.markdown': BlocksMarkdown;
       'blocks.newsletter': BlocksNewsletter;
@@ -171,9 +224,11 @@ declare module '@strapi/strapi' {
       'blocks.section-heading': BlocksSectionHeading;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
+      'layout.sign-in': LayoutSignIn;
       'shared.card': SharedCard;
       'shared.link': SharedLink;
       'shared.logo-link': SharedLogoLink;
+      'shared.pricing': SharedPricing;
     }
   }
 }
