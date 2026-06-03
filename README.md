@@ -23,7 +23,8 @@ npm install
 yarn install
 ```
 
-🛠️ Available Scripts
+#### Available Scripts
+
 Inside the project directory, you can run the following commands:
 
 develop
