@@ -123,6 +123,7 @@ export interface LayoutFooter extends Struct.ComponentSchema {
     displayName: 'Footer';
   };
   attributes: {
+    CenterTextBlock: Schema.Attribute.Blocks;
     logo: Schema.Attribute.Component<'shared.logo-link', false>;
     socialLinks: Schema.Attribute.Component<'shared.logo-link', true>;
     text: Schema.Attribute.Text;
